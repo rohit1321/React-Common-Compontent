@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/components/inputFormComponent/input.js", "src/app/form/page.js", "src/app/table/page.tsx", "src/app/sidebar"],
   "exclude": ["node_modules"]
 }
