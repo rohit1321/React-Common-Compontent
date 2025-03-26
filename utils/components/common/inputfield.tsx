@@ -1,3 +1,5 @@
+// import { useForm } from "react-hook-form";
+
 interface InputFieldProps {
   label: string;
   type: string;
@@ -43,6 +45,9 @@ const InputField: React.FC<InputFieldProps> = ({
       {error && (
         <p className="text-red-500 text-xs mt-1 text-danger">{error}</p>
       )}
+
+
+
     </div>
   );
 };

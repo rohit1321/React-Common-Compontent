@@ -79,7 +79,6 @@ export default function FileUpload({
         type="file"
         ref={fileInputRef}
         onChange={fileInputHandler}
-        
         style={{ display: "none" }}
         accept={acceptedFileTypes}
       />
