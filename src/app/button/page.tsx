@@ -1,11 +1,14 @@
-import IconPicker from "../../../utils/components/common/iconPicker";
+import FileUpload from "../../../utils/components/common/upload";
 
 
 
-export default function  button(){
-    return(
+export default function button() {
+    return (
         <>
-        <IconPicker/>
+            <FileUpload
+                buttonText="Choose file"
+                dropZoneText="Drag and Drop a file"
+                acceptedFileTypes="image/jpeg, image/png, .txt" />
         </>
     );
 }
