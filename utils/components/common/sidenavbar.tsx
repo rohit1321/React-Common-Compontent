@@ -28,10 +28,9 @@ const Sidebar: React.FC<SidebarProps> = ({items , dashBoardName}) => {
       <div className="sidebar-header d-flex  justify-content-between">
           <div className={`font-bold h4  ${collapsed ? 'd-none' : ''}`}>{dashBoardName}</div>
           <button onClick={toggleSidebar} className="btn text-white">
-          <i className={collapsed ? "fa fa-arrow-right" : "fa fa-arrow-left"} /> {/* Toggle the button text */}
+          <i className={collapsed ? "fa fa-arrow-right" : "fa fa-arrow-left"} />
           </button>
         </div>
-
         <ul >
           {items.map((item) => (
             <li
