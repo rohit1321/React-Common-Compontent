@@ -1,53 +1,65 @@
-// import { useForm } from "react-hook-form";
+import React from "react";
+import {
+  SubmitHandler,
+  useForm,
+  FieldValues,
+  FieldErrors,
+} from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-interface InputFieldProps {
+type Student = {
+  name: string;
   label: string;
   type: string;
-  id: string;
-  className: string;
-  inputClass: string;
-  placeholder: string;
-  value: string;
-  onchange: undefined;
-  error: string;
+};
+
+interface InputFieldProps {
+  fields: Student[];
+  validationSchema: yup.ObjectSchema<FieldValues, yup.AnyObject, unknown, "">;
+  onSubmit: SubmitHandler<Record<string, unknown>>;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
-  label,
-  type,
-  id,
-  className,
-  inputClass,
-  placeholder,
-  value,
-  onchange,
-  error,
+  fields,
+  validationSchema,
+  onSubmit,
 }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<Record<string, unknown>>({
+    resolver: yupResolver(validationSchema),
+  });
+
   return (
-    <div className=" container m-5 ">
-      {label && (
-        <label className={`${className} block   h6 mb-1`} htmlFor={id}>
-          {label}
-        </label>
-      )}
+    <div className="p-4 border rounded-lg">
+      {fields.map((field) => (
+        <div key={field.name} className="mb-4">
+          <label className="block text-bold mb-2">{field.label}</label>
+          <br />
+          <input
+            type={field.type}
+            {...register(field.name)}
+            className="border p-2 w-full rounded"
+          />
+          {errors[field.name] && (
+            <p className="text-danger my-2">
+              {(errors as FieldErrors<Record<string, unknown>>)[field.name]?.message}
+            </p>
+          )}
+        </div>
+      ))}
 
-      <br />
-      <input
-        type={type}
-        id={id}
-        placeholder={placeholder}
-        value={value}
-        onChange={onchange}
-        className={`${inputClass} w-full  p-2 border rounded ${
-          error ? "border-red-500" : "border-gray-300"
-        }`}
-      />
-      {error && (
-        <p className="text-red-500 text-xs mt-1 text-danger">{error}</p>
-      )}
-
-
-
+      <button
+        type="button"
+        className="text-white px-3 p-1 rounded btn btn-primary "
+        onClick={handleSubmit(onSubmit)}
+        disabled={isSubmitting}
+      >
+        Submit
+      </button>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import MyForm from "../../../utils/components/common/form";
 
 const Page = () => {
   const fields = [
