@@ -12,10 +12,10 @@ interface FileUploadProps {
 
 export default function FileUpload({
   onFileSelect,
-  buttonText ,
-  dropZoneText ,
+  buttonText,
+  dropZoneText,
   acceptedFileTypes,
-  customClass ,
+  customClass,
 }: FileUploadProps) {
   const [fileName, setFileName] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -63,28 +63,28 @@ export default function FileUpload({
   return (
     <div className={`d-block justify-content-center ${customClass}`}>
       <div className="container d-flex justify-content-center">
-      <div
-        id="drop_zone"
-        onDrop={dropHandler}
-        onDragOver={dragOverHandler}
-        className="d-flex  align-items-center m-5 card w-50 p-5 "
-      >
-        <p>{dropZoneText}</p>
-        <button className="btn btn-primary mt-3" onClick={handleChooseFile}>
-          {buttonText}
-        </button>
-      </div>
+        <div
+          id="drop_zone"
+          onDrop={dropHandler}
+          onDragOver={dragOverHandler}
+          className="d-flex  align-items-center m-5 card w-50 p-5 "
+        >
+          <p>{dropZoneText}</p>
+          <button className="btn btn-primary mt-3" onClick={handleChooseFile}>
+            {buttonText}
+          </button>
+        </div>
 
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={fileInputHandler}
-        style={{ display: "none" }}
-        accept={acceptedFileTypes}
-      />
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={fileInputHandler}
+          style={{ display: "none" }}
+          accept={acceptedFileTypes}
+        />
       </div>
       <div className="mt-5 text-black fw-bold d-flex justify-content-center">
-        Selected File: {fileName || "None"}
+        Selected File:- {fileName || "None"}
       </div>
     </div>
   );
