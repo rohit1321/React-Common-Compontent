@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/rohit1321/React-Common-Compontent/compare/v1.0.0...v1.1.0) (2025-04-09)
+
+
+### Bug Fixes
+
+* update version ([9fd99dd](https://github.com/rohit1321/React-Common-Compontent/commit/9fd99dd971a40628f210f2fd7739a61e979fb700))
+
+
+### Features
+
+* update version ([1dd4d3f](https://github.com/rohit1321/React-Common-Compontent/commit/1dd4d3f5fbc5c04bd6ca4f9e5f29498df6879fe7))
+
 # 1.0.0 (2025-04-09)
 
 
