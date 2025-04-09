@@ -30,8 +30,8 @@
 
 //     return (
 //         <>
-//             {/* <InputField label="Name" placeholder="Enter your name" type="text" id="name" error="" 
-//             // onchange={(e)=> setfeed(e?.target?.value)} 
+//             {/* <InputField label="Name" placeholder="Enter your name" type="text" id="name" error=""
+//             // onchange={(e)=> setfeed(e?.target?.value)}
 //             // value={feed}
 //             /> */}
 //             <InputField
