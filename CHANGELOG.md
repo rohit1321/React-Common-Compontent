@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/rohit1321/React-Common-Compontent/compare/v1.1.0...v1.2.0) (2025-04-09)
+
+
+### Features
+
+* add dark mode toggle ([8d6c07e](https://github.com/rohit1321/React-Common-Compontent/commit/8d6c07e6b2dd13978c2ac7f692dc2587b218c50d))
+
 # [1.1.0](https://github.com/rohit1321/React-Common-Compontent/compare/v1.0.0...v1.1.0) (2025-04-09)
 
 
