@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/rohit1321/React-Common-Compontent/compare/v2.0.0...v2.1.0) (2025-04-09)
+
+
+### Features
+
+* remove deprecated inputField component ([9fdd8c6](https://github.com/rohit1321/React-Common-Compontent/commit/9fdd8c67de53e303b817eea46a2db63bed449022))
+
 # [2.0.0](https://github.com/rohit1321/React-Common-Compontent/compare/v1.2.0...v2.0.0) (2025-04-09)
 
 # [1.2.0](https://github.com/rohit1321/React-Common-Compontent/compare/v1.1.0...v1.2.0) (2025-04-09)
