@@ -84,7 +84,7 @@ export default function FileUpload({
         />
       </div>
       <div className="mt-5 text-black fw-bold d-flex justify-content-center">
-        Selected File: {fileName || "None"}
+        Selected File:p {fileName || "None"}
       </div>
     </div>
   );
