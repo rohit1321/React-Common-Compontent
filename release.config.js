@@ -1,18 +1,47 @@
+// module.exports = {
+//     branches: ['main'],
+//     plugins: [
+//       '@semantic-release/commit-analyzer',
+//       '@semantic-release/release-notes-generator',
+//       '@semantic-release/changelog', // ✅ generates changelog
+//       '@semantic-release/npm',
+//       [
+//         '@semantic-release/git',
+//         {
+//           assets: ['package.json', 'CHANGELOG.md'],
+//           message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+//         }
+//       ],
+//       '@semantic-release/github'
+//     ]
+//   };
 module.exports = {
-    branches: ['main'],
-    plugins: [
+  branches: ['main'],
+  plugins: [
+    [
       '@semantic-release/commit-analyzer',
-      '@semantic-release/release-notes-generator',
-      '@semantic-release/changelog', // ✅ generates changelog
-      '@semantic-release/npm',
-      [
-        '@semantic-release/git',
-        {
-          assets: ['package.json', 'CHANGELOG.md'],
-          message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+      {
+        preset: 'conventionalcommits',
+        releaseRules: [
+          { type: 'feat', release: 'minor' },
+          { type: 'fix', release: 'patch' },
+          { breaking: true, release: 'major' }
+        ],
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
         }
-      ],
-      '@semantic-release/github'
-    ]
-  };
-  
+      }
+    ],
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
+    '@semantic-release/npm',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'CHANGELOG.md'],
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+      }
+    ],
+    '@semantic-release/github'
+  ]
+};
